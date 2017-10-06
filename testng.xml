@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parent Test Suite">
+	<listeners>
+		<listener class-name="com.happiestmind.automation.adapters.TestListenerAdapter" />
+		<listener class-name="com.happiestmind.automation.adapters.AbstractReportAdapter" />
+	</listeners>
+	<suite-files>
+		<!-- <suite-file path="./SmokeTest_1_0.xml" />
+		<suite-file path="./SmokeTest_1_1.xml" /> -->
+		<!-- <suite-file path="./CLSRegression.xml" /> -->
+		<suite-file path="./WPRegression.xml" />
+	</suite-files>
+</suite>

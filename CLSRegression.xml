@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" CLSRegression Suite 1.0">
+
+	<test name="CLS Test">
+		<classes>
+			<class name="com.happiestmind.automation.suite.clsregression.CLSLogin"></class>
+			<class name="com.happiestmind.automation.suite.clsregression.CLSLogin2"></class>
+		</classes>
+	</test>
+	
+</suite>
+

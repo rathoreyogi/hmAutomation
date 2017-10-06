@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [ CLSRegression Suite 1.0]">
+  <listeners>
+    <listener class-name="com.happiestmind.automation.adapters.TestListenerAdapter"/>
+    <listener class-name="com.happiestmind.automation.adapters.AbstractReportAdapter"/>
+  </listeners>
+  <test name="CLS Test(failed)">
+    <classes>
+      <class name="com.happiestmind.automation.suite.clsregression.CLSLogin">
+        <methods>
+          <include name="cllogintest" invocation-numbers="0 1 2 3"/>
+          <include name="reportTestResult"/>
+          <include name="checkTestSkip"/>
+          <include name="checkSuiteSkip"/>
+          <include name="closeConnections"/>
+          <include name="reportDataSetResult"/>
+        </methods>
+      </class> <!-- com.happiestmind.automation.suite.clsregression.CLSLogin -->
+      <class name="com.happiestmind.automation.suite.clsregression.CLSLogin2">
+        <methods>
+          <include name="reportDataSetResult"/>
+          <include name="cllogintest" invocation-numbers="0 1 2 3"/>
+          <include name="reportTestResult"/>
+          <include name="checkSuiteSkip"/>
+          <include name="closeConnections"/>
+          <include name="checkTestSkip"/>
+        </methods>
+      </class> <!-- com.happiestmind.automation.suite.clsregression.CLSLogin2 -->
+    </classes>
+  </test> <!-- CLS Test(failed) -->
+</suite> <!-- Failed suite [ CLSRegression Suite 1.0] -->

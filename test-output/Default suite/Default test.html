@@ -1,0 +1,1434 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/18</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Aug 30 16:29:00 IST 2017</td>
+</tr>
+<tr><td>Total time:</td><td>45 seconds (45452 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>java.lang.Exception: java.lang.Exception: org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 47 milliseconds
+Build info: version: &apos;3.3.1&apos;, revision: &apos;5234b325d5&apos;, time: &apos;2017-03-10 09:10:29 +0000&apos;
+System info: host: &apos;HMECL000220&apos;, ip: &apos;10.16.33.238&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir20312_7178}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 21dcff810fb11708c6abd787ab20b84d
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:450)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: java.lang.Exception: org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 47 milliseconds
+Build info: version: &apos;3.3.1&apos;, revision: &apos;5234b325d5&apos;, time: &apos;2017-03-10 09:10:29 +0000&apos;
+System info: host: &apos;HMECL000220&apos;, ip: &apos;10.16.33.238&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir20312_7178}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 21dcff810fb11708c6abd787ab20b84d
+	at com.happiestmind.automation.selenium.CustomWebElement.click(CustomWebElement.java:30)
+	at com.happiestmind.automation.wp.pagefactory.HomePage.clickIAgree(HomePage.java:121)
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:214)
+	... 25 more
+Caused by: org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 47 milliseconds
+Build info: version: &apos;3.3.1&apos;, revision: &apos;5234b325d5&apos;, time: &apos;2017-03-10 09:10:29 +0000&apos;
+System info: host: &apos;HMECL000220&apos;, ip: &apos;10.16.33.238&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir20312_7178}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 21dcff810fb11708c6abd787ab20b84d
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:638)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:274)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy11.click(Unknown Source)
+	at com.happiestmind.automation.selenium.CustomWebElement.click(CustomWebElement.java:23)
+	... 27 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace1587872480", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1587872480'><pre>java.lang.Exception: java.lang.Exception: org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 47 milliseconds
+Build info: version: &apos;3.3.1&apos;, revision: &apos;5234b325d5&apos;, time: &apos;2017-03-10 09:10:29 +0000&apos;
+System info: host: &apos;HMECL000220&apos;, ip: &apos;10.16.33.238&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir20312_7178}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 21dcff810fb11708c6abd787ab20b84d
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:450)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: java.lang.Exception: org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 47 milliseconds
+Build info: version: &apos;3.3.1&apos;, revision: &apos;5234b325d5&apos;, time: &apos;2017-03-10 09:10:29 +0000&apos;
+System info: host: &apos;HMECL000220&apos;, ip: &apos;10.16.33.238&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir20312_7178}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 21dcff810fb11708c6abd787ab20b84d
+	at com.happiestmind.automation.selenium.CustomWebElement.click(CustomWebElement.java:30)
+	at com.happiestmind.automation.wp.pagefactory.HomePage.clickIAgree(HomePage.java:121)
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:214)
+	... 25 more
+Caused by: org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 47 milliseconds
+Build info: version: &apos;3.3.1&apos;, revision: &apos;5234b325d5&apos;, time: &apos;2017-03-10 09:10:29 +0000&apos;
+System info: host: &apos;HMECL000220&apos;, ip: &apos;10.16.33.238&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir20312_7178}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 21dcff810fb11708c6abd787ab20b84d
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:638)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:274)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy11.click(Unknown Source)
+	at com.happiestmind.automation.selenium.CustomWebElement.click(CustomWebElement.java:23)
+	... 27 more
+</pre></div></td>
+<td>35</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 800, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 0
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace646910062", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace646910062'><pre>org.testng.SkipException: Runmode for test set data set to no 0
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, PLANE, TESTPAL, 11/11/1981, 719029506, 8884160003, 888-416-0003, yogi, yogi, 71, 71, STATIONVIEW PL, BOLTON, L7E1K9, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 1
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace846974653", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace846974653'><pre>org.testng.SkipException: Runmode for test set data set to no 1
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, JAMES, CABRAL, 09/09/1972, 719029506, 8884160003, 888-416-0003, yogi, yogi, 30, 30, HOLBROOKE AVE, ETOBICOKE, M8Y3B2, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 2
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1489933928", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1489933928'><pre>org.testng.SkipException: Runmode for test set data set to no 2
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, COURTNEY, TESTLOVE, 09/09/1937, 100510262, 8884160003, 888-416-0003, yogi, yogi, 5, 34, DUNDAS ST E, MISSISSAUGA, L5A1V9, Happy Minds PVT.LTD, 08/31/2017, 5000, 1000, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 3
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1611370719", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1611370719'><pre>org.testng.SkipException: Runmode for test set data set to no 3
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: https://betabanker.com, Chrome, ALPHA, TESTCODE, 05/23/1973, 719029506, 8884160003, 888-416-0003, yogi, yogi, 3, 56, ABIGAIL PL, ETOBICOKE, M9R3X1, Happy Minds PVT.LTD, 08/31/2017, 5000, 1000, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 4
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace532885071", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace532885071'><pre>org.testng.SkipException: Runmode for test set data set to no 4
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: https://betabanker.com, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 5
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1663888181", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1663888181'><pre>org.testng.SkipException: Runmode for test set data set to no 5
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 6
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace643489709", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace643489709'><pre>org.testng.SkipException: Runmode for test set data set to no 6
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 7
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace503938393", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace503938393'><pre>org.testng.SkipException: Runmode for test set data set to no 7
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 9
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1894698434", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1894698434'><pre>org.testng.SkipException: Runmode for test set data set to no 9
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 10
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1725054538", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1725054538'><pre>org.testng.SkipException: Runmode for test set data set to no 10
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 11
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace981487964", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace981487964'><pre>org.testng.SkipException: Runmode for test set data set to no 11
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 12
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace7548983", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace7548983'><pre>org.testng.SkipException: Runmode for test set data set to no 12
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 13
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1484275564", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1484275564'><pre>org.testng.SkipException: Runmode for test set data set to no 13
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 14
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace245530164", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace245530164'><pre>org.testng.SkipException: Runmode for test set data set to no 14
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankeroositcms.happiestminds.com/#!/home, Chrome, ISLAND, PROVIDENCE, 12/25/1968, 719029506, 888-416-0003, 888-416-0003, yogi, yogi, 274, 274, OLIVE AVENUE, OSHAWA, L1H2P6, HappyMinds, 08/31/2017, 5000, 100, 004, 10880, 22-222-2222, 1000, 888-416-0003, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 15
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace417875774", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace417875774'><pre>org.testng.SkipException: Runmode for test set data set to no 15
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankerooprodlb-518629435.ca-central-1.elb.amazonaws.com/#!/home, Chrome, DOMEMIC , TESTPOTKIDIS , 12/12/1970, 719029506, 438-870-7347, 888-416-0003, dome, dome, 97, 97, STANLEY, OTTAWA, K1M1N8, HappyMinds, 08/31/2017, 5000, 100, 010, 00941, 8747687, 1000, 438-870-7347, 0000, Test@123, Test@123, Dummy - Standard, t, testf, </td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 16
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1255109302", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1255109302'><pre>org.testng.SkipException: Runmode for test set data set to no 16
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: https://betabanker.com, Chrome, LUCUS , TESTCOFFEE , 12/14/1960, 719029506, 438-870-7347, 888-416-0003, lucus, lucus, 415, 415, SIGNAT DR1, NORTH YORK, M9L1V1, HappyMinds, 08/31/2017, 5000, 100, 010, 00941, 8747687, 1000, 438-870-7347, 0000, Test@123, Test@123, Dummy - Standard, testf, testf, {"applications":{"application":{"appID":4615930,"appReference":"a77W00000004ZuAIAU","accounts":{"account":[{"accountNumber":"22-222-2222","accountHolder":"GEORGE SNITMAN","secondaryAccountHolder":""}]},"decisionPoints":{"decisionPoint":[{"criteriaID":200,"criteria":"monthlyIncomeTotal","score":"3243.0000"},
+{"criteriaID":203,"criteria":"dishonourCount","score":"4.0000"},{"criteriaID":226,"criteria":"monthlyHighRiskMerchant","score":"0.0000"},
+{"criteriaID":300,"criteria":"primaryIncome1MonthlyAmount","score":"2541.3398"},{"criteriaID":301,"criteria":"primaryIncome1Frequency","score":"2.0000"},
+{"criteriaID":307,"criteria":"primaryIncome1NextPayDate","score":null},{"criteriaID":309,"criteria":"primaryIncome1IsBenefit","score":"0.0000"},
+{"criteriaID":320,"criteria":"primaryIncome1SameDaySpend%","score":"0.0443"},{"criteriaID":900,"criteria":"monthlyIncomeTotal30Days","score":"850.0000"},{"criteriaID":901,"criteria":"primaryIncome1MonthlyAmountLast30Days","score":"0.0000"},
+{"criteriaID":902,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftpos","score":"0.0000"},{"criteriaID":903,"criteria":"monthlyOutgoingsPeriodicExcludingAtmEftposLast30Days","score":"0.0000"},
+{"criteriaID":904,"criteria":"overdrawnPercentForPeriod","score":"0.0000"},{"criteriaID":905,"criteria":"overdrawnPercentLast30Days","score":"0.0000"},
+{"criteriaID":907,"criteria":"dishonoursLast30Days","score":"1.0000"}]}}}}</td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 17
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace740827140", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace740827140'><pre>org.testng.SkipException: Runmode for test set data set to no 17
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+<tr>
+<td title='com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest()'><b>wpregistrationtest</b><br>Test class: com.happiestmind.automation.suite.wpregression.WPRegistrationTest<br>Parameters: http://bankerooprodlb-518629435.ca-central-1.elb.amazonaws.com/#!/home, Chrome, STEPHEN , SIMPLE , 9/10/1964, 719029506, 438-870-7347, 888-416-0003, stephen, stephen, 5, 5, KENNETH AVE, NORTH YORK, M2N6M7, HappyMinds, 08/31/2017, 5000, 100, 010, 00941, 8747687, 1000, 438-870-7347, 0000, Test@123, Test@123, Dummy - Standard, t, testf, </td>
+<td><div><pre>org.testng.SkipException: Runmode for test set data set to no 18
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace687501326", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace687501326'><pre>org.testng.SkipException: Runmode for test set data set to no 18
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:183)
+	at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.happiestmind.automation.suite.wpregression.WPRegistrationTest@7791a895</td></tr>
+</table><p>
+</body>
+</html>

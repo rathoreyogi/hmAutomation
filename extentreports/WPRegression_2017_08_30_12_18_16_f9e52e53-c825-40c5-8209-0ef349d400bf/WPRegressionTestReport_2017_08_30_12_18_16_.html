@@ -1,0 +1,2203 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			ExtentReports Library 2.41.1 | http://relevantcodes.com/extentreports-for-selenium/ | https://github.com/anshooarora/
+			Copyright (c) 2015, Anshoo Arora (Relevant Codes) | Copyrights licensed under the New BSD License | http://opensource.org/licenses/BSD-3-Clause
+			Documentation: http://extentreports.relevantcodes.com 
+		-->
+
+		<meta charset='UTF-8' /> 
+		<meta name='description' content='ExtentReports (by Anshoo Arora) is a reporting library for automation testing for .NET and Java. It creates detailed and beautiful HTML reports for modern browsers. ExtentReports shows test and step summary along with dashboards, system and environment details for quick analysis of your tests.' />
+		<meta name='robots' content='noodp, noydir' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta name='extentx' id='extentx' content='' />
+		
+		<title>
+				HappiestMind Automation
+		</title>
+		
+		
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+		<link href='http://cdn.rawgit.com/anshooarora/extentreports/6032d73243ba4fe4fb8769eb9c315d4fdf16fe68/cdn/extent.css' type='text/css' rel='stylesheet' />
+		
+		<style>
+				
+      
+        
+      
+    
+		</style>
+	</head>
+	
+	
+	<body class='extent default dark hide-overflow'>
+		<!-- nav -->
+		<nav>
+			<div class='logo-container blue darken-2'>
+				<a class='logo-content' href='http://extentreports.relevantcodes.com'>
+					<span>ExtentReports</span>
+				</a>
+				<a href='#' data-activates='slide-out' class='button-collapse hide-on-large-only'><i class='mdi-navigation-apps'></i></a>
+			</div>
+			<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+				<li class='analysis waves-effect active'><a href='#!' class='test-view' onclick="_updateCurrentStage(0)"><i class='mdi-action-dashboard'></i>Test Details</a></li>
+					<li class='analysis waves-effect'><a href='#!' class='exceptions-view' onclick="_updateCurrentStage(2)"><i class='mdi-action-bug-report'></i>Exceptions</a></li>
+				<li class='analysis waves-effect'>
+					<a href='#!' onclick="_updateCurrentStage(-1)" class='dashboard-view'><i class='mdi-action-track-changes'></i></i>Analysis</a>
+				</li>
+			</ul>
+			<span class='report-name'>Test Suite Run</span> <span class='report-headline'>Automation Report</span>
+			<ul class='right hide-on-med-and-down nav-right'>
+				<li class='theme-selector' alt='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");' title='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");'>
+					<i class='mdi-hardware-desktop-windows'></i>
+				</li>
+				<li>
+					<span class='suite-started-time'>2017-08-30 12:19:53</span>
+				</li>
+				<li>
+					<span>v2.41.1</span>
+				</li>
+			</ul>
+		</nav>
+		<!-- /nav -->
+		
+		<!-- container -->
+		<div class='container'>
+			
+			<!-- dashboard -->
+			<div id='dashboard-view' class='row'>
+				<div class='time-totals'>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-tests'> 
+							<span class='panel-name'>Total Tests</span> 
+							<span class='total-tests'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-steps'> 
+							<span class='panel-name'>Total Steps</span> 
+							<span class='total-steps'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-current'> 
+							<span class='panel-name'>Total Time Taken (Current Run)</span> 
+							<span class='suite-total-time-current-value panel-lead'>0h 1m 37s+702ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-overall'> 
+							<span class='panel-name'>Total Time Taken (Overall)</span> 
+							<span class='suite-total-time-overall-value panel-lead'>0h 1m 37s+702ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-start-time'>
+						<div class='card accent green-accent'> 
+							<span class='panel-name'>Start</span> 
+							<span class='panel-lead suite-started-time'>2017-08-30 12:18:16</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-end-time'>
+						<div class='card accent pink-accent'> 
+							<span class='panel-name'>End</span> 
+							<span class='panel-lead suite-ended-time'>2017-08-30 12:19:53</span> 
+						</div> 
+					</div>
+				</div>
+				<div class='charts'>
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Tests View</span>
+							</div> 
+							<div class='panel-setting modal-trigger test-count-setting right'>
+								<a href='#test-count-setting'><i class='mdi-navigation-more-vert text-md'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='test-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-pass-count weight-normal'></span> test(s) passed</span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-fail-count weight-normal'></span> test(s) failed, <span class='t-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div> 
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Steps View</span>
+							</div> 
+							<div class='panel-setting modal-trigger step-status-filter right'>
+								<a href='#step-status-filter'><i class='mdi-navigation-more-vert text-md'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='step-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-pass-count weight-normal'></span> step(s) passed </span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-fail-count weight-normal'></span> step(s) failed, <span class='s-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div>
+					<div class='col s12 m12 l4 fh'> 
+						<div class='card-panel'> 
+							<span class='panel-name'>Pass Percentage</span> 
+							<span class='pass-percentage panel-lead'></span> 
+							<div class='progress light-blue lighten-3'> 
+								<div class='determinate light-blue'></div> 
+							</div> 
+						</div> 
+					</div>
+				</div>
+				<div class='system-view'>
+					<div class='col l4 m12 s12'>
+						<div class='card-panel'>
+							<span class='label info outline right'>Environment</span>
+							<table>
+								<thead>
+									<tr>
+										<th>Param</th>
+										<th>Value</th>
+									</tr>
+								</thead>
+								<tbody>
+										<tr>
+											<td>User Name</td>
+											<td>yogender.singh</td>
+										</tr>
+										<tr>
+											<td>OS</td>
+											<td>Windows 8.1</td>
+										</tr>
+										<tr>
+											<td>Java Version</td>
+											<td>1.8.0_91</td>
+										</tr>
+										<tr>
+											<td>Host Name</td>
+											<td>HMECL000220</td>
+										</tr>
+										<tr>
+											<td>AutomationDeveloper</td>
+											<td>YogenderSinghRathore</td>
+										</tr>
+										<tr>
+											<td>Company</td>
+											<td>HappiestMind</td>
+										</tr>
+										<tr>
+											<td>Environment</td>
+											<td>AutomationTesting</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /dashboard -->
+			
+			<!-- tests -->
+			<div id='test-view' class='row _addedTable'>
+				<div class='col _addedCell1'>
+					<div class='contents'>
+						<div class='card-panel heading'>
+							<h5>Tests</h5>
+						</div>
+						<div class='card-panel filters'>
+							<div>
+								<a class='dropdown-button btn-floating btn-small waves-effect waves-light grey tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+									<i class='mdi-action-reorder'></i>
+								</a>
+								<ul id='tests-toggle' class='dropdown-content'>
+									<li class='pass'><a href='#!'>Pass</a></li>
+									<li class='fail'><a href='#!'>Fail</a></li>
+										<li class='fatal'><a href='#!'>Fatal</a></li>
+									<li class='skip'><a href='#!'>Skip</a></li>
+									<li class='divider'></li>
+									<li class='clear'><a href='#!'>Clear Filters</a></li>
+								</ul>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light grey' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+									<i class='mdi-navigation-close'></i>
+								</a>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light grey' id='enableDashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+									<i class='mdi-action-track-changes'></i>
+								</a>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light blue enabled' id='refreshCharts' alt='Refresh Charts on Filters' title='Refresh Charts on Filters'>
+									<i class='mdi-navigation-refresh'></i>
+								</a>
+							</div>
+							<div class='search' alt='Search Tests' title='Search Tests'>
+								<div class='input-field left'>
+									<input id='searchTests' type='text' class='validate' placeholder='Search Tests...'>
+								</div>
+								<a href="#" class='btn-floating btn-small waves-effect waves-light grey'>
+									<i class='mdi-action-search'></i>
+								</a>
+							</div>
+						</div>
+						<div class='card-panel no-padding-h no-padding-v no-margin-v'>
+							<div class='wrapper'>
+								<ul id='test-collection' class='test-collection'>
+										<li class='collection-item test displayed active skip ' extentid='9a6da84d-c7af-4090-af80-f87d5134d798'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:18:16</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:18:16</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+1ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:16</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:17</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='33443f36-605c-4051-bb75-3a0040ce2439'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:18:17</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:18:17</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:17</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:17</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='be098314-8c33-4e19-8a02-6c37ccaeebe9'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:18:17</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:18:17</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:17</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:18</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='ece53341-97c8-4abb-99a5-6788a7f31734'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:18:18</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:18:18</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:18</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:18</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='0ae67a9f-3d24-4870-929a-e2ce89067837'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:18:18</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:18:18</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:18</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:18:18</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active fatal ' extentid='ac50aa61-925e-4e6a-8710-38aae446b3de'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize fatal'>fatal</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:18:18</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:50</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 1m 32s+261ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																	<th>StepName</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:40</td>
+																		<td class='step-name'>Step: Click on province button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:41</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_41_5ac15121-d685-4fd4-9bce-384688362ecd.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_41_5ac15121-d685-4fd4-9bce-384688362ecd.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:41</td>
+																		<td class='step-name'>Step: Select ontario.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:42</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_42_bf8b3cec-0a54-464c-a3fd-04f900d4ae93.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_42_bf8b3cec-0a54-464c-a3fd-04f900d4ae93.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:43</td>
+																		<td class='step-name'>Step: Click on I Agree.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:44</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_44_db1bd2e2-6836-403d-bbdb-ce1374235fb5.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_44_db1bd2e2-6836-403d-bbdb-ce1374235fb5.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:46</td>
+																		<td class='step-name'>Step: Start your Application button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:47</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_47_84d03ba1-e8ba-48f4-bb63-98e0bdd5416a.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_47_84d03ba1-e8ba-48f4-bb63-98e0bdd5416a.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:49</td>
+																		<td class='step-name'>Step: Select 1st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:49</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_49_2a081652-3086-474f-8e83-0870fedbe1e1.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_49_2a081652-3086-474f-8e83-0870fedbe1e1.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:49</td>
+																		<td class='step-name'>Step: Select 2st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:50</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_50_eb9f35cb-a80d-497d-89dc-d040e0d86be2.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_50_eb9f35cb-a80d-497d-89dc-d040e0d86be2.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:50</td>
+																		<td class='step-name'>Step: Select 3st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:50</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_50_92a3e995-b832-4d8f-b832-28b204c44d51.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_50_92a3e995-b832-4d8f-b832-28b204c44d51.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:50</td>
+																		<td class='step-name'>Step: Select 4st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:51</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_51_603c6abb-8272-43d3-9534-43b5b5f2e8ad.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_51_603c6abb-8272-43d3-9534-43b5b5f2e8ad.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:51</td>
+																		<td class='step-name'>Step: Select 5st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:51</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_51_b85a3c5e-0e26-418f-8e8e-134c36243449.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_51_b85a3c5e-0e26-418f-8e8e-134c36243449.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:51</td>
+																		<td class='step-name'>Step: Click On continue button On Quick Check.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:52</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_52_65c52b36-f119-41e7-a7d1-9c478e2a5da8.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_52_65c52b36-f119-41e7-a7d1-9c478e2a5da8.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:53</td>
+																		<td class='step-name'>Step: Click on Title.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:53</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_53_bb13b9e4-256d-46c5-82c5-a83eb4e781eb.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_53_bb13b9e4-256d-46c5-82c5-a83eb4e781eb.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:53</td>
+																		<td class='step-name'>Step: Select Mr. option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:54</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_54_ba1e063c-517a-4bec-95b8-66ec001b74ac.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_54_ba1e063c-517a-4bec-95b8-66ec001b74ac.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:54</td>
+																		<td class='step-name'>Step: Enter First Name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:54</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_54_2423ab36-bba4-4e33-b750-8463863d20c0.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_54_2423ab36-bba4-4e33-b750-8463863d20c0.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:54</td>
+																		<td class='step-name'>Step: Enter Last Name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:55</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_55_b8b530b3-0dd2-47cd-bd91-4c22a1475f26.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_55_b8b530b3-0dd2-47cd-bd91-4c22a1475f26.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:55</td>
+																		<td class='step-name'>Step: Enter DOB.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:55</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_55_da7d79fd-6336-4e90-bf7c-44941d65b1ff.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_55_da7d79fd-6336-4e90-bf7c-44941d65b1ff.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:56</td>
+																		<td class='step-name'>Step: Enter SIN.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:56</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_56_a4403705-7ddd-41eb-b607-22b46ff3b83c.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_56_a4403705-7ddd-41eb-b607-22b46ff3b83c.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:56</td>
+																		<td class='step-name'>Step: Click on Marital Status.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:56</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_56_8733bb1b-def1-4de3-a3c5-0f20ba727c38.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_56_8733bb1b-def1-4de3-a3c5-0f20ba727c38.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:57</td>
+																		<td class='step-name'>Step: Select Widowed.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:57</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_57_67fce24b-7ee3-47f2-98eb-bd7c8f6325de.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_57_67fce24b-7ee3-47f2-98eb-bd7c8f6325de.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:57</td>
+																		<td class='step-name'>Step: Click on Number of dependents.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:57</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_57_eb85a84e-ed3c-45b8-8fbf-7b7dbaf6746a.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_57_eb85a84e-ed3c-45b8-8fbf-7b7dbaf6746a.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:58</td>
+																		<td class='step-name'>Step: Select 3.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:58</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_58_cce34d6f-459f-4b5e-9bc0-adc7d30754e7.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_58_cce34d6f-459f-4b5e-9bc0-adc7d30754e7.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:58</td>
+																		<td class='step-name'>Step: Enter Mobile Phone Number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:58</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_58_dff411ee-7e70-4c57-b683-49494c82b8be.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_58_dff411ee-7e70-4c57-b683-49494c82b8be.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:18:59</td>
+																		<td class='step-name'>Step: Enter Home phone number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:18:59</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_59_cdd73f46-1933-4a71-9181-76ecbcdfe8a3.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_18_59_cdd73f46-1933-4a71-9181-76ecbcdfe8a3.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:09</td>
+																		<td class='step-name'>Step: Enter Email.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:10</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_10_3c9a71e2-d893-4a79-a283-6d41cacc76c6.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_10_3c9a71e2-d893-4a79-a283-6d41cacc76c6.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:10</td>
+																		<td class='step-name'>Step: Enter Reconfirm email.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:11</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_11_df33c762-f406-4fef-b773-9acb7bad6330.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_11_df33c762-f406-4fef-b773-9acb7bad6330.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:11</td>
+																		<td class='step-name'>Step: Click on Reason for loan.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:11</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_11_36223282-781c-4318-a189-420227c47ae0.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_11_36223282-781c-4318-a189-420227c47ae0.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:11</td>
+																		<td class='step-name'>Step: Select .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:12</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_12_d5509f9f-a578-4019-936a-bcc49c02fb70.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_12_d5509f9f-a578-4019-936a-bcc49c02fb70.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:12</td>
+																		<td class='step-name'>Step: Click on Highest level of education.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:12</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_12_57c35cf4-fa3e-444d-881a-8639793ec1c8.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_12_57c35cf4-fa3e-444d-881a-8639793ec1c8.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:12</td>
+																		<td class='step-name'>Step: Select .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:12</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_12_769f14d1-7715-41bc-8210-ec1f99184d1f.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_12_769f14d1-7715-41bc-8210-ec1f99184d1f.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:13</td>
+																		<td class='step-name'>Step: Click on Have you failed to repay any loans in the past?.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:13</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_13_1b2234ca-e370-4a7e-8ce4-44093f12d71e.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_13_1b2234ca-e370-4a7e-8ce4-44093f12d71e.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:13</td>
+																		<td class='step-name'>Step: Select .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:13</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_13_f37e2ee6-33b0-4ddb-abfc-3fb0b04e7196.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_13_f37e2ee6-33b0-4ddb-abfc-3fb0b04e7196.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:14</td>
+																		<td class='step-name'>Step: Click on How did you hear about us?.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:14</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_14_cde54036-27c7-45f4-bfb2-9d2d68a5610d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_14_cde54036-27c7-45f4-bfb2-9d2d68a5610d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:14</td>
+																		<td class='step-name'>Step: Select .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:14</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_14_87d1ac4e-139c-46a8-9551-f29a8fc8f236.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_14_87d1ac4e-139c-46a8-9551-f29a8fc8f236.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:15</td>
+																		<td class='step-name'>Step: Click On continue Button on Personal details Page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:15</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_15_630d2a21-3464-43c6-abcd-a712b4bc5027.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_15_630d2a21-3464-43c6-abcd-a712b4bc5027.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:16</td>
+																		<td class='step-name'>Step: Click On Home Status.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:17</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_17_b294d4a6-5057-424d-b776-d7ec96c8a72d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_17_b294d4a6-5057-424d-b776-d7ec96c8a72d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:17</td>
+																		<td class='step-name'>Step: Select Home Status.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:17</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_17_676106aa-14d6-47cb-9f37-b8b9045e7357.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_17_676106aa-14d6-47cb-9f37-b8b9045e7357.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:17</td>
+																		<td class='step-name'>Step: Enter Building number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:18</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_17_b2a71bc5-6eca-49bf-8418-a0e64190d6ba.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_17_b2a71bc5-6eca-49bf-8418-a0e64190d6ba.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:18</td>
+																		<td class='step-name'>Step: Enter Apartment number(if applicable).</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:18</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_18_f857afb2-7868-4a81-b173-9ba0aae2bb7c.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_18_f857afb2-7868-4a81-b173-9ba0aae2bb7c.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:18</td>
+																		<td class='step-name'>Step: Enter Street name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:19</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_19_01eef451-d14b-4786-b97e-695a21232df2.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_19_01eef451-d14b-4786-b97e-695a21232df2.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:19</td>
+																		<td class='step-name'>Step: Enter Town/City.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:19</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_19_419a4751-7de2-41cb-836d-6462e7324dcf.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_19_419a4751-7de2-41cb-836d-6462e7324dcf.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:19</td>
+																		<td class='step-name'>Step: Enter Postal code.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:20</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_20_4b9ad088-24eb-4c78-8ecd-3e43b99f8833.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_20_4b9ad088-24eb-4c78-8ecd-3e43b99f8833.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:20</td>
+																		<td class='step-name'>Step: CLick On years .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:20</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_20_b62cf28d-0b62-4dfe-be5e-d17425667a4b.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_20_b62cf28d-0b62-4dfe-be5e-d17425667a4b.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:20</td>
+																		<td class='step-name'>Step: Select Years .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:21</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_21_6e6762b2-b911-46b1-bd11-bf65b4a62e5d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_21_6e6762b2-b911-46b1-bd11-bf65b4a62e5d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:21</td>
+																		<td class='step-name'>Step: CLick ON months .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:21</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_21_c18cc895-45d0-472b-8ec9-f85a24d6e6a6.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_21_c18cc895-45d0-472b-8ec9-f85a24d6e6a6.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:21</td>
+																		<td class='step-name'>Step: Select Months .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:22</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_22_41e50fde-ef0b-47c7-b234-62178c424aaf.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_22_41e50fde-ef0b-47c7-b234-62178c424aaf.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:22</td>
+																		<td class='step-name'>Step: Click ON continue button on Address detils page .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:22</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_22_45465c58-f8bc-495c-a358-83caf3596e5c.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_22_45465c58-f8bc-495c-a358-83caf3596e5c.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:23</td>
+																		<td class='step-name'>Step: CLick Source of income.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:24</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_24_89a233f7-90d5-4cdb-90f0-271ab1b0cc1f.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_24_89a233f7-90d5-4cdb-90f0-271ab1b0cc1f.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:24</td>
+																		<td class='step-name'>Step: Select Source of income Employed.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:24</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_24_deb3420b-c36b-483d-a80a-7b0b23ca0d20.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_24_deb3420b-c36b-483d-a80a-7b0b23ca0d20.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:24</td>
+																		<td class='step-name'>Step: Click Type of employment.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:25</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_25_91f33cab-af4e-4914-b8a5-c167a3156ed7.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_25_91f33cab-af4e-4914-b8a5-c167a3156ed7.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:25</td>
+																		<td class='step-name'>Step: Select Type of employment Full Time.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:25</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_25_cddfdc89-8949-4554-893f-6c92d1e38b67.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_25_cddfdc89-8949-4554-893f-6c92d1e38b67.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:25</td>
+																		<td class='step-name'>Step: Enter Employeer name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:26</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_26_8905d038-b692-4507-a69e-d613f8344105.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_26_8905d038-b692-4507-a69e-d613f8344105.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:26</td>
+																		<td class='step-name'>Step: Click Length of employment years.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:26</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_26_2ab02dc8-7887-4ce5-9994-77825de086b4.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_26_2ab02dc8-7887-4ce5-9994-77825de086b4.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:26</td>
+																		<td class='step-name'>Step: Select Length of employment years.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:27</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_27_1a123126-80be-41dc-8361-491c9ccef6ae.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_27_1a123126-80be-41dc-8361-491c9ccef6ae.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:27</td>
+																		<td class='step-name'>Step: Click Length of employment Months.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:27</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_27_6a029dcf-6f70-4089-bbde-f2f58d8984e2.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_27_6a029dcf-6f70-4089-bbde-f2f58d8984e2.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:27</td>
+																		<td class='step-name'>Step: Select Length of employment Months.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:28</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_28_46691139-11bf-4d40-95ef-ca8a31c52f85.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_28_46691139-11bf-4d40-95ef-ca8a31c52f85.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:28</td>
+																		<td class='step-name'>Step: CLick How is your salary paid?.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:28</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_28_eced751c-4077-4b7c-ba9a-4b135ed0fe25.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_28_eced751c-4077-4b7c-ba9a-4b135ed0fe25.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:28</td>
+																		<td class='step-name'>Step: Select How is your salary paid DirectDeposit.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:29</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_29_0c345aaa-faca-486f-ae51-96e89e976446.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_29_0c345aaa-faca-486f-ae51-96e89e976446.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:29</td>
+																		<td class='step-name'>Step: CLick How often do you get paid?.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:29</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_29_06b6aeb8-fe4f-4ff9-8f4c-58bf020d1b69.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_29_06b6aeb8-fe4f-4ff9-8f4c-58bf020d1b69.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:29</td>
+																		<td class='step-name'>Step: Select How often do you get paid? Monthly.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:30</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_30_057242c4-4f0d-4d31-88e1-af322ce2275f.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_30_057242c4-4f0d-4d31-88e1-af322ce2275f.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:30</td>
+																		<td class='step-name'>Step: Enter Next pay date.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:30</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_30_d5893f1e-884d-4e11-8e3f-3b76e9b8dc9d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_30_d5893f1e-884d-4e11-8e3f-3b76e9b8dc9d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:30</td>
+																		<td class='step-name'>Step: Enter Amount of last net pay(including tips if applicable)*.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:31</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_31_6ed64a10-c87a-49c7-bde7-fd3542016757.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_31_6ed64a10-c87a-49c7-bde7-fd3542016757.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:31</td>
+																		<td class='step-name'>Step: CLick Is a portion of your salary paid in cash (e.g. tips)?*.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:31</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_31_c3c4a1ef-027e-4bd8-95d1-5d15cd782fcd.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_31_c3c4a1ef-027e-4bd8-95d1-5d15cd782fcd.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:31</td>
+																		<td class='step-name'>Step: Select Yes.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:32</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_32_368100bd-82d8-45b7-898a-9e5d3a38e95d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_32_368100bd-82d8-45b7-898a-9e5d3a38e95d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:32</td>
+																		<td class='step-name'>Step: Enter How much of your net pay is paid in cash?*.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:32</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_32_f8c775d3-927a-476f-993c-7708bea4e81d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_32_f8c775d3-927a-476f-993c-7708bea4e81d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:32</td>
+																		<td class='step-name'>Step: Click on continue button on Employment Details page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:33</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_33_bf68866f-a698-4944-9ea3-30dfd719d0dc.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_33_bf68866f-a698-4944-9ea3-30dfd719d0dc.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:36</td>
+																		<td class='step-name'>Step: Click Bank Name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:36</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_36_a3f35453-5bdc-406d-ba8d-aeb6595d40fb.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_36_a3f35453-5bdc-406d-ba8d-aeb6595d40fb.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:36</td>
+																		<td class='step-name'>Step: Select Banak Name Others.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:37</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_37_5e53a110-0cd7-46aa-83de-76dd56611233.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_37_5e53a110-0cd7-46aa-83de-76dd56611233.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:37</td>
+																		<td class='step-name'>Step: Enter Transit number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:37</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_37_8946e89e-48d1-4dcf-a346-78d2d0c640e9.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_37_8946e89e-48d1-4dcf-a346-78d2d0c640e9.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:38</td>
+																		<td class='step-name'>Step: Enter Account number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:38</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_38_71357526-102e-4fff-ace6-fae16c1d6dde.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_38_71357526-102e-4fff-ace6-fae16c1d6dde.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:38</td>
+																		<td class='step-name'>Step: Click On continue Button on bank detail page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:38</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_38_bd9c5494-dfe0-4e4b-9e18-508661d2f3d8.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_38_bd9c5494-dfe0-4e4b-9e18-508661d2f3d8.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:42</td>
+																		<td class='step-name'>Step: Click on first check box.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:42</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_42_31bf24d2-5c41-466e-9bbc-656768caf35a.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_42_31bf24d2-5c41-466e-9bbc-656768caf35a.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:42</td>
+																		<td class='step-name'>Step: Click on first check box.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:42</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_42_a94170dc-702a-4afb-87cc-2141ae46b257.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_42_a94170dc-702a-4afb-87cc-2141ae46b257.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:43</td>
+																		<td class='step-name'>Step: Click on first check box.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:43</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_43_c7f3cd5a-25f7-4738-afe3-7e9be7e7cfa0.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_43_c7f3cd5a-25f7-4738-afe3-7e9be7e7cfa0.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:43</td>
+																		<td class='step-name'>Step: Click on first check box.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:43</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_43_7379753b-0365-4155-8c75-eb273df525b0.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_43_7379753b-0365-4155-8c75-eb273df525b0.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:44</td>
+																		<td class='step-name'>Step: Click on first check box.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:44</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_44_7d80c26b-9646-4f43-bb38-3a046ec916ea.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_44_7d80c26b-9646-4f43-bb38-3a046ec916ea.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:44</td>
+																		<td class='step-name'>Step: Click on second check box.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:44</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_44_9f9ea507-a0da-4423-9a02-cf68f554067a.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_44_9f9ea507-a0da-4423-9a02-cf68f554067a.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>12:19:45</td>
+																		<td class='step-name'>Step: Click on continue Button on review info page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:45</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_45_1e5ddf79-b9dc-47af-9bbb-e8ba8f1df507.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_45_1e5ddf79-b9dc-47af-9bbb-e8ba8f1df507.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>12:19:49</td>
+																		<td class='step-name'>Enter on OTP</td>
+																	<td class='step-details'>no such element: Unable to locate element: {"method":"name","selector":"pinNumber"}
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 69 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'
+System info: host: 'HMECL000220', ip: '10.16.33.238', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_91'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir23564_14629}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 46371cde39d8bdb38c7de97b7dc33d57
+*** Element info: {Using=name, value=pinNumber}</td>
+																</tr>
+																<tr>
+																	<td class='status fatal' title='fatal' alt='fatal'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>12:19:50</td>
+																	<td class='step-details'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"name","selector":"pinNumber"}
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'
+System info: host: 'HMECL000220', ip: '10.16.33.238', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_91'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir23564_14629}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 46371cde39d8bdb38c7de97b7dc33d57
+*** Element info: {Using=name, value=pinNumber}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:638)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:452)
+	at org.openqa.selenium.By$ByName.findElement(By.java:303)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.getText(Unknown Source)
+	at com.happiestmind.automation.errorhandler.ExtentErrorHandler.extentHandlerForElement(ExtentErrorHandler.java:95)
+	at com.happiestmind.automation.selenium.CustomWebElement.sendKeys(CustomWebElement.java:69)
+	at com.happiestmind.automation.wp.pagefactory.ActiveAccount.enterOneTimePinNumber(ActiveAccount.java:61)
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:377)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1297)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>12:19:50</td>
+																	<td class='step-details'>Snapshot for failed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_50_192f6bbf-7464-4033-b72a-f6bb6046958c.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/WPRegistrationTest_2017_08_30_12_19_50_192f6bbf-7464-4033-b72a-f6bb6046958c.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																		<td class='step-name'>Test Case Failed:</td>
+																	<td class='step-details'>wpregistrationtest</td>
+																</tr>
+																<tr>
+																	<td class='status fail' title='fail' alt='fail'><i class='mdi-navigation-cancel'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>Failure Cause: java.lang.Exception: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"name","selector":"pinNumber"}
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'
+System info: host: 'HMECL000220', ip: '10.16.33.238', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_91'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir23564_14629}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 46371cde39d8bdb38c7de97b7dc33d57
+*** Element info: {Using=name, value=pinNumber}</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='5267a648-eb9e-4384-96f9-ae67904ff8ff'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+1ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='92f492a6-3a14-4cf0-aab5-3aa48623b4b7'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='ab3c1986-5688-4b5a-9d1a-7f29fcd6ad43'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='7f23f665-19f9-4511-bc03-c3f32d0f1366'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='55bc93bc-b672-4ca5-b794-458467a03593'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='e327255a-41e1-414e-ac71-a4b59939bd01'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:51</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:51</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='d0ab4e5a-a239-4635-adfd-a4a8ddfa7cd4'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='9ecc9c3c-e257-4b1e-a6a7-479e844b64ca'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='f857505d-ba0d-41c8-8ec9-4aa7d2604cdc'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+1ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='304d20fe-ca1a-45e0-81dc-f92ec4f12502'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='c14ab714-0494-47d7-b32a-0e676d5326f2'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='4ed03331-d43b-42e2-84a1-0aac8137995d'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:52</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:52</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:53</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='f7265301-a1fc-4b20-8eec-d9a7fa9f764a'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-30 12:19:53</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-30 12:19:53</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:53</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>12:19:53</td>
+																	<td class='step-details'>Test Case Skipped is wpregistrationtest</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id='test-details-wrapper' class='col _addedCell2'>
+					<div class='contents'>
+						<div class='card-panel details-view'>
+							<h5 class='details-name'></h5>
+							<div class='step-filters right'>
+								<span class='btn-floating btn-small waves-effect waves-light blue' status='info' alt='info' title='info'><i class='mdi-action-info-outline'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light green' status='pass' alt='pass' title='pass'><i class='mdi-action-check-circle'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red' status='fail' alt='fail' title='fail'><i class='mdi-navigation-cancel'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red darken-4' status='fatal' alt='fatal' title='fatal'><i class='mdi-navigation-cancel'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red lighten-2' status='error' alt='error' title='error'><i class='mdi-alert-error'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light orange' alt='warning' status='warning' title='warning'><i class='mdi-alert-warning'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light cyan' status='skip' alt='skip' title='skip'><i class='mdi-content-redo'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light grey darken-2' status='clear-step-filter' alt='Clear filters' title='Clear filters'><i class='mdi-content-clear'></i></span>
+							</div>
+							<div class='details-container'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /tests -->
+			
+			<!-- categories -->
+			<!-- /categories -->
+			
+			<!-- exceptions -->
+				<div id='exceptions-view' class='row _addedTable hide'>
+					<div class='col _addedCell1'>
+						<div class='contents'>
+							<div class='card-panel heading'>
+								<h5>Defects</h5>
+							</div>
+							<div class='card-panel filters'>
+								<div class='search' alt='Search tests' title='Search tests'>
+									<div class='input-field left'>
+										<input id='searchTests' type='text' class='validate' placeholder='Search tests...'>
+									</div>
+									<a href="#" class='btn-floating btn-small waves-effect waves-light blue lighten-1'>
+										<i class='mdi-action-search'></i>
+									</a>
+								</div>
+							</div>
+							<div class='card-panel no-padding-h no-padding-v'>
+								<div class='wrapper'>
+									<ul id='exception-collection' class='exception-collection'>
+											<li class='exception-item displayed'>
+												<div class='exception-head'>
+													<span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+												</div>
+												<div class='exception-test-count'>
+													<span class='fail label'>1</span>
+												</div>
+												<div class='exception-body'>
+													<div class='exception-tests'>
+														<table class='bordered'>
+															<thead>
+																<tr>
+																	<th>RunDate</th>
+																	<th>Test Name</th>
+																	<th>Exception</th>
+																</tr>
+															</thead>
+															<tbody>
+                                                                   <tr class='fatal'>
+                                                                       <td>2017-08-30 12:18:18</td>
+                                                                       <td><span class='exception-link linked' extentid='ac50aa61-925e-4e6a-8710-38aae446b3de'>Starting user registration</span></td>
+                                                                       <td><pre class='exception-message'>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"name","selector":"pinNumber"}
+  (Session info: chrome=60.0.3112.101)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.3.9600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'
+System info: host: 'HMECL000220', ip: '10.16.33.238', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_91'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\YOGEND~1.SIN\AppData\Local\Temp\scoped_dir23564_14629}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.101, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 46371cde39d8bdb38c7de97b7dc33d57
+*** Element info: {Using=name, value=pinNumber}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:638)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:452)
+	at org.openqa.selenium.By$ByName.findElement(By.java:303)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy11.getText(Unknown Source)
+	at com.happiestmind.automation.errorhandler.ExtentErrorHandler.extentHandlerForElement(ExtentErrorHandler.java:95)
+	at com.happiestmind.automation.selenium.CustomWebElement.sendKeys(CustomWebElement.java:69)
+	at com.happiestmind.automation.wp.pagefactory.ActiveAccount.enterOneTimePinNumber(ActiveAccount.java:61)
+	at com.happiestmind.automation.suite.wpregression.WPRegistrationTest.wpregistrationtest(WPRegistrationTest.java:377)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1297)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></td>
+                                                                   </tr>
+                                                            </tbody>
+														</table>
+													</div>
+												</div> 
+											</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id='exception-details-wrapper' class='col _addedCell2'>
+						<div class='contents'>
+							<div class='card-panel details-view'>
+								<h5 class='exception-name'></h5>
+								<div class='exception-container'>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- /exceptions -->
+			
+			<!-- testrunner logs -->
+			<!-- /testrunner logs -->
+			
+		</div>
+		<!-- /container -->
+		
+		<!-- test dashboard counts setting -->
+		<div id='test-count-setting' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Configure Tests Count Setting</h5> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodes' class='with-gap'> 
+				<label for='parentWithoutNodes'>Parent Tests Only (Does not include child nodes in counts)</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodesAndNodes' class='with-gap'> 
+				<label for='parentWithoutNodesAndNodes'>Parent Tests Without Child Tests + Child Tests</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='childNodes' class='with-gap'> 
+				<label for='childNodes'>Child Tests Only</label> 
+			</div> 
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /test dashboard counts setting -->
+		
+		<!-- filter for step status -->
+		<div id='step-status-filter' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Select status</h5> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-pass'> 
+				<label for='step-dashboard-filter-pass'>Pass</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fail'> 
+				<label for='step-dashboard-filter-fail'>Fail</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fatal'> 
+				<label for='step-dashboard-filter-fatal'>Fatal</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-error'> 
+				<label for='step-dashboard-filter-error'>Error</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-warning'> 
+				<label for='step-dashboard-filter-warning'>Warning</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-skip'> 
+				<label for='step-dashboard-filter-skip'>Skipped</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-info'> 
+				<label for='step-dashboard-filter-info'>Info</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-unknown'> 
+				<label for='step-dashboard-filter-unknown'>Unknown</label> 
+			</div>
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /filter for step status -->
+		
+		<script src='http://cdn.rawgit.com/anshooarora/extentreports/6032d73243ba4fe4fb8769eb9c315d4fdf16fe68/cdn/extent.js' type='text/javascript'></script>
+
+		<script>$(document).ready(function() { $('.logo span').html('ExtentReports'); });</script>
+		<script>
+				
+      
+        $(document).ready(function() {
+          
+        });
+      
+    
+		</script>
+	</body>
+</html>

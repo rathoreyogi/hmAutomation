@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" WPRegression Suite 1.0">
+
+	<test name="WP login">
+		<classes>
+			<class name="com.happiestmind.automation.suite.wpregression.WPLoginTest"></class>
+			<!-- <class name="com.happiestmind.automation.suite.wpregression.WPRegistrationTest"></class> -->
+			<!-- <class name="com.happiestmind.automation.suite.wpregression.EditProfileTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.ForgotPasswordTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.ChangePasswordTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.CancelLoanTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.SPLDashBoardTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.SPLPartialPaymentTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.SPLFullPaymentTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.InstallmentDashBoardTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.InstallmentPartialPaymentTest"></class>
+			<class name="com.happiestmind.automation.suite.wpregression.InstallmentFullPaymentTest"></class> -->
+		</classes>
+	</test>
+
+
+
+</suite>

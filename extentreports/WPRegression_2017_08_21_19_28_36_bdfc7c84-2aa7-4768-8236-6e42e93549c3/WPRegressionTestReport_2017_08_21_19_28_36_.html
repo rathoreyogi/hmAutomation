@@ -1,0 +1,2180 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			ExtentReports Library 2.41.1 | http://relevantcodes.com/extentreports-for-selenium/ | https://github.com/anshooarora/
+			Copyright (c) 2015, Anshoo Arora (Relevant Codes) | Copyrights licensed under the New BSD License | http://opensource.org/licenses/BSD-3-Clause
+			Documentation: http://extentreports.relevantcodes.com 
+		-->
+
+		<meta charset='UTF-8' /> 
+		<meta name='description' content='ExtentReports (by Anshoo Arora) is a reporting library for automation testing for .NET and Java. It creates detailed and beautiful HTML reports for modern browsers. ExtentReports shows test and step summary along with dashboards, system and environment details for quick analysis of your tests.' />
+		<meta name='robots' content='noodp, noydir' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<meta name='extentx' id='extentx' content='' />
+		
+		<title>
+				HappiestMind Automation
+		</title>
+		
+		
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+		<link href='http://cdn.rawgit.com/anshooarora/extentreports/6032d73243ba4fe4fb8769eb9c315d4fdf16fe68/cdn/extent.css' type='text/css' rel='stylesheet' />
+		
+		<style>
+				
+      
+        
+      
+    
+		</style>
+	</head>
+	
+	
+	<body class='extent default dark hide-overflow'>
+		<!-- nav -->
+		<nav>
+			<div class='logo-container blue darken-2'>
+				<a class='logo-content' href='http://extentreports.relevantcodes.com'>
+					<span>ExtentReports</span>
+				</a>
+				<a href='#' data-activates='slide-out' class='button-collapse hide-on-large-only'><i class='mdi-navigation-apps'></i></a>
+			</div>
+			<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+				<li class='analysis waves-effect active'><a href='#!' class='test-view' onclick="_updateCurrentStage(0)"><i class='mdi-action-dashboard'></i>Test Details</a></li>
+				<li class='analysis waves-effect'>
+					<a href='#!' onclick="_updateCurrentStage(-1)" class='dashboard-view'><i class='mdi-action-track-changes'></i></i>Analysis</a>
+				</li>
+			</ul>
+			<span class='report-name'>Test Suite Run</span> <span class='report-headline'>Automation Report</span>
+			<ul class='right hide-on-med-and-down nav-right'>
+				<li class='theme-selector' alt='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");' title='Click to toggle dark theme. To enable by default, use js configuration $("body").addClass("dark");'>
+					<i class='mdi-hardware-desktop-windows'></i>
+				</li>
+				<li>
+					<span class='suite-started-time'>2017-08-21 19:32:14</span>
+				</li>
+				<li>
+					<span>v2.41.1</span>
+				</li>
+			</ul>
+		</nav>
+		<!-- /nav -->
+		
+		<!-- container -->
+		<div class='container'>
+			
+			<!-- dashboard -->
+			<div id='dashboard-view' class='row'>
+				<div class='time-totals'>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-tests'> 
+							<span class='panel-name'>Total Tests</span> 
+							<span class='total-tests'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6'>
+						<div class='card suite-total-steps'> 
+							<span class='panel-name'>Total Steps</span> 
+							<span class='total-steps'> <span class='panel-lead'></span> </span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-current'> 
+							<span class='panel-name'>Total Time Taken (Current Run)</span> 
+							<span class='suite-total-time-current-value panel-lead'>0h 3m 38s+345ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s12'>
+						<div class='card suite-total-time-overall'> 
+							<span class='panel-name'>Total Time Taken (Overall)</span> 
+							<span class='suite-total-time-overall-value panel-lead'>0h 3m 38s+345ms</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-start-time'>
+						<div class='card accent green-accent'> 
+							<span class='panel-name'>Start</span> 
+							<span class='panel-lead suite-started-time'>2017-08-21 19:28:36</span> 
+						</div> 
+					</div>
+					<div class='col l2 m4 s6 suite-end-time'>
+						<div class='card accent pink-accent'> 
+							<span class='panel-name'>End</span> 
+							<span class='panel-lead suite-ended-time'>2017-08-21 19:32:14</span> 
+						</div> 
+					</div>
+				</div>
+				<div class='charts'>
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Tests View</span>
+							</div> 
+							<div class='panel-setting modal-trigger test-count-setting right'>
+								<a href='#test-count-setting'><i class='mdi-navigation-more-vert text-md'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='test-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-pass-count weight-normal'></span> test(s) passed</span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='t-fail-count weight-normal'></span> test(s) failed, <span class='t-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div> 
+					<div class='col s12 m6 l4 fh'> 
+						<div class='card-panel'> 
+							<div>
+								<span class='panel-name'>Steps View</span>
+							</div> 
+							<div class='panel-setting modal-trigger step-status-filter right'>
+								<a href='#step-status-filter'><i class='mdi-navigation-more-vert text-md'></i></a>
+							</div> 
+							<div class='chart-box'>
+								<canvas class='text-centered' id='step-analysis'></canvas>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-pass-count weight-normal'></span> step(s) passed </span>
+							</div> 
+							<div>
+								<span class='weight-light'><span class='s-fail-count weight-normal'></span> step(s) failed, <span class='s-others-count weight-normal'></span> others</span>
+							</div> 
+						</div> 
+					</div>
+					<div class='col s12 m12 l4 fh'> 
+						<div class='card-panel'> 
+							<span class='panel-name'>Pass Percentage</span> 
+							<span class='pass-percentage panel-lead'></span> 
+							<div class='progress light-blue lighten-3'> 
+								<div class='determinate light-blue'></div> 
+							</div> 
+						</div> 
+					</div>
+				</div>
+				<div class='system-view'>
+					<div class='col l4 m12 s12'>
+						<div class='card-panel'>
+							<span class='label info outline right'>Environment</span>
+							<table>
+								<thead>
+									<tr>
+										<th>Param</th>
+										<th>Value</th>
+									</tr>
+								</thead>
+								<tbody>
+										<tr>
+											<td>User Name</td>
+											<td>yogender.singh</td>
+										</tr>
+										<tr>
+											<td>OS</td>
+											<td>Windows 8.1</td>
+										</tr>
+										<tr>
+											<td>Java Version</td>
+											<td>1.8.0_91</td>
+										</tr>
+										<tr>
+											<td>Host Name</td>
+											<td>HMECL000220</td>
+										</tr>
+										<tr>
+											<td>AutomationDeveloper</td>
+											<td>YogenderSinghRathore</td>
+										</tr>
+										<tr>
+											<td>Company</td>
+											<td>HappiestMind</td>
+										</tr>
+										<tr>
+											<td>Environment</td>
+											<td>AutomationTesting</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /dashboard -->
+			
+			<!-- tests -->
+			<div id='test-view' class='row _addedTable'>
+				<div class='col _addedCell1'>
+					<div class='contents'>
+						<div class='card-panel heading'>
+							<h5>Tests</h5>
+						</div>
+						<div class='card-panel filters'>
+							<div>
+								<a class='dropdown-button btn-floating btn-small waves-effect waves-light grey tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+									<i class='mdi-action-reorder'></i>
+								</a>
+								<ul id='tests-toggle' class='dropdown-content'>
+									<li class='pass'><a href='#!'>Pass</a></li>
+									<li class='fail'><a href='#!'>Fail</a></li>
+									<li class='skip'><a href='#!'>Skip</a></li>
+									<li class='divider'></li>
+									<li class='clear'><a href='#!'>Clear Filters</a></li>
+								</ul>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light grey' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+									<i class='mdi-navigation-close'></i>
+								</a>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light grey' id='enableDashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+									<i class='mdi-action-track-changes'></i>
+								</a>
+							</div>
+							<div>
+								<a class='btn-floating btn-small waves-effect waves-light blue enabled' id='refreshCharts' alt='Refresh Charts on Filters' title='Refresh Charts on Filters'>
+									<i class='mdi-navigation-refresh'></i>
+								</a>
+							</div>
+							<div class='search' alt='Search Tests' title='Search Tests'>
+								<div class='input-field left'>
+									<input id='searchTests' type='text' class='validate' placeholder='Search Tests...'>
+								</div>
+								<a href="#" class='btn-floating btn-small waves-effect waves-light grey'>
+									<i class='mdi-action-search'></i>
+								</a>
+							</div>
+						</div>
+						<div class='card-panel no-padding-h no-padding-v no-margin-v'>
+							<div class='wrapper'>
+								<ul id='test-collection' class='test-collection'>
+										<li class='collection-item test displayed active skip ' extentid='41f98294-60bf-4570-8dc5-67d97916cadb'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:28:36</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:28:36</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+1ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:36</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:37</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='235f2a64-4606-4214-beda-5c922fd935ea'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:28:37</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:28:37</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:37</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:37</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='e9036d7d-9efa-413e-9c77-d623284a1eaf'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:28:37</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:28:37</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:37</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:38</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='4d5cf437-0d97-4e13-9829-19f027ed0fd1'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:28:38</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:28:38</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:38</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:38</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='b7eb3584-1aec-4bfe-a8c8-ed517998596b'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:28:38</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:28:38</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:38</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:28:38</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active pass ' extentid='1d92e3b0-89ce-4dd8-af7c-37816b71256d'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize pass'>pass</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:28:38</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:11</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 3m 32s+937ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																	<th>StepName</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:05</td>
+																		<td class='step-name'>Step: Click on province button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:06</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_06_2355803b-eb95-46f7-9448-ca6854a33f6b.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_06_2355803b-eb95-46f7-9448-ca6854a33f6b.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:06</td>
+																		<td class='step-name'>Step: Select ontario.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:07</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_07_ede022a2-95e7-4533-a8b7-8cfeb3a206f9.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_07_ede022a2-95e7-4533-a8b7-8cfeb3a206f9.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:08</td>
+																		<td class='step-name'>Step: Click on I Agree.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:09</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_09_79c908a2-c15f-4ec3-89f9-b82088bff0cc.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_09_79c908a2-c15f-4ec3-89f9-b82088bff0cc.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:11</td>
+																		<td class='step-name'>Step: Start your Application button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:12</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_12_1dcc0b4f-7d54-4c9a-bb45-74fa2b8626ac.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_12_1dcc0b4f-7d54-4c9a-bb45-74fa2b8626ac.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:14</td>
+																		<td class='step-name'>Step: Select 1st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:15</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_15_ff832546-20e3-4962-bb79-e89f83da5b13.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_15_ff832546-20e3-4962-bb79-e89f83da5b13.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:15</td>
+																		<td class='step-name'>Step: Select 2st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:15</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_15_2b7c412d-9680-4cf4-8399-a660306dcfba.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_15_2b7c412d-9680-4cf4-8399-a660306dcfba.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:15</td>
+																		<td class='step-name'>Step: Select 3st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:16</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_16_7605cb73-e533-4beb-b1ed-d753715aa5dd.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_16_7605cb73-e533-4beb-b1ed-d753715aa5dd.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:16</td>
+																		<td class='step-name'>Step: Select 4st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:17</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_17_b19026b7-eef7-4287-bc73-0c505cf899ac.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_17_b19026b7-eef7-4287-bc73-0c505cf899ac.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:17</td>
+																		<td class='step-name'>Step: Select 5st Yes option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:17</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_17_32966983-0000-4694-aef4-81ca57436ab4.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_17_32966983-0000-4694-aef4-81ca57436ab4.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:17</td>
+																		<td class='step-name'>Step: Click On continue button On Quick Check.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:18</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_18_c2ecd1cb-9c9e-445b-8341-28b1dcc1dbe5.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_18_c2ecd1cb-9c9e-445b-8341-28b1dcc1dbe5.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:19</td>
+																		<td class='step-name'>Step: Click on Title.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:19</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_19_c7499e65-3309-4827-b941-a2be47a48b40.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_19_c7499e65-3309-4827-b941-a2be47a48b40.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:20</td>
+																		<td class='step-name'>Step: Select Mr. option.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:20</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_20_cc6a6db7-1ceb-48f7-a1c9-f3b8ffe2e899.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_20_cc6a6db7-1ceb-48f7-a1c9-f3b8ffe2e899.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:20</td>
+																		<td class='step-name'>Step: Enter First Name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:21</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_21_00d6ee41-c754-43f1-8e8e-11118ad46838.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_21_00d6ee41-c754-43f1-8e8e-11118ad46838.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:21</td>
+																		<td class='step-name'>Step: Enter Last Name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:21</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_21_507c196c-22cd-4d5a-b32e-1d38d1beb43f.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_21_507c196c-22cd-4d5a-b32e-1d38d1beb43f.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:22</td>
+																		<td class='step-name'>Step: Enter DOB.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:22</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_22_cfcf8b74-c8cb-4287-8814-3d1ae0e30284.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_22_cfcf8b74-c8cb-4287-8814-3d1ae0e30284.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:22</td>
+																		<td class='step-name'>Step: Enter SIN.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:23</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_23_913baef3-ffda-4e20-9534-de33061f6afc.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_23_913baef3-ffda-4e20-9534-de33061f6afc.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:23</td>
+																		<td class='step-name'>Step: Click on Marital Status.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:23</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_23_3204f7aa-402b-434b-9c11-ae3c49fc5162.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_23_3204f7aa-402b-434b-9c11-ae3c49fc5162.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:24</td>
+																		<td class='step-name'>Step: Select Widowed.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:24</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_24_507eca88-9874-4197-bea5-ff18c6d8e0e9.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_24_507eca88-9874-4197-bea5-ff18c6d8e0e9.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:24</td>
+																		<td class='step-name'>Step: Click on Number of dependents.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:25</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_25_160fa201-4c9f-4e82-b610-d33c2519a1ff.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_25_160fa201-4c9f-4e82-b610-d33c2519a1ff.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:25</td>
+																		<td class='step-name'>Step: Select 3.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:25</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_25_ca1ecaa5-20e8-44ac-be45-290d0e5e33ba.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_25_ca1ecaa5-20e8-44ac-be45-290d0e5e33ba.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:25</td>
+																		<td class='step-name'>Step: Enter Mobile Phone Number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:26</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_26_b19def01-abaa-4fb3-bea5-c06b7848b1a4.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_26_b19def01-abaa-4fb3-bea5-c06b7848b1a4.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:26</td>
+																		<td class='step-name'>Step: Enter Home phone number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:26</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_26_452a10c0-bdd9-471d-98d7-a99f2c197494.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_26_452a10c0-bdd9-471d-98d7-a99f2c197494.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:37</td>
+																		<td class='step-name'>Step: Enter Email.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:37</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_37_f4ebdde6-ea2c-42ca-9a70-2886d1fbd785.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_37_f4ebdde6-ea2c-42ca-9a70-2886d1fbd785.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:38</td>
+																		<td class='step-name'>Step: Enter Reconfirm email.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:38</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_38_811ddce2-b986-4827-aae6-a18e68e1d262.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_38_811ddce2-b986-4827-aae6-a18e68e1d262.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:38</td>
+																		<td class='step-name'>Step: Click on Reason for loan.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:39</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_39_a132421b-08e7-40a8-aa56-d86fb91b155d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_39_a132421b-08e7-40a8-aa56-d86fb91b155d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:39</td>
+																		<td class='step-name'>Step: Select .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:39</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_39_29e6ea17-c1ea-49a8-8cd1-af858ba46ada.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_39_29e6ea17-c1ea-49a8-8cd1-af858ba46ada.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:40</td>
+																		<td class='step-name'>Step: Click on Highest level of education.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:40</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_40_e84980ec-eb68-40e9-9686-8adfcc39f281.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_40_e84980ec-eb68-40e9-9686-8adfcc39f281.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:40</td>
+																		<td class='step-name'>Step: Select .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:40</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_40_a8775656-b3c9-419b-ac67-f623f0f0b014.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_40_a8775656-b3c9-419b-ac67-f623f0f0b014.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:41</td>
+																		<td class='step-name'>Step: Click on Have you failed to repay any loans in the past?.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:41</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_41_9e9b21c1-8c91-423b-a3d5-f6a50d4f5308.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_41_9e9b21c1-8c91-423b-a3d5-f6a50d4f5308.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:41</td>
+																		<td class='step-name'>Step: Select .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:42</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_42_f7ee1c5b-99a2-4979-a74b-24fe371d72b2.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_42_f7ee1c5b-99a2-4979-a74b-24fe371d72b2.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:42</td>
+																		<td class='step-name'>Step: Click on How did you hear about us?.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:42</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_42_68c221c5-56cc-45c9-988f-a7a73f5cfaf3.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_42_68c221c5-56cc-45c9-988f-a7a73f5cfaf3.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:43</td>
+																		<td class='step-name'>Step: Select .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:43</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_43_57319b6f-5740-4d32-93f9-5691349a22ff.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_43_57319b6f-5740-4d32-93f9-5691349a22ff.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:43</td>
+																		<td class='step-name'>Step: Click On continue Button on Personal details Page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:44</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_44_e4b75418-0d9b-4e23-a120-21f4428d70e9.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_44_e4b75418-0d9b-4e23-a120-21f4428d70e9.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:45</td>
+																		<td class='step-name'>Step: Click On Home Status.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:46</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_46_c000595c-3c50-4710-90d6-b8a52bac0c85.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_46_c000595c-3c50-4710-90d6-b8a52bac0c85.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:46</td>
+																		<td class='step-name'>Step: Select Home Status.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:46</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_46_9584fac2-a0a4-4260-b7f1-1a0c719def48.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_46_9584fac2-a0a4-4260-b7f1-1a0c719def48.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:46</td>
+																		<td class='step-name'>Step: Enter Building number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:47</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_47_48af99af-4d8c-4273-9839-a5f5b1b9949d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_47_48af99af-4d8c-4273-9839-a5f5b1b9949d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:47</td>
+																		<td class='step-name'>Step: Enter Apartment number(if applicable).</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:47</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_47_5117cae3-f1f2-4a34-9fbc-33443f9c8e08.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_47_5117cae3-f1f2-4a34-9fbc-33443f9c8e08.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:48</td>
+																		<td class='step-name'>Step: Enter Street name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:48</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_48_aa0a89c5-b451-473e-b2f0-ebbd828dc0de.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_48_aa0a89c5-b451-473e-b2f0-ebbd828dc0de.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:48</td>
+																		<td class='step-name'>Step: Enter Town/City.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:49</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_49_fbb8e269-8656-488d-9e5c-1c76c7bd6a65.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_49_fbb8e269-8656-488d-9e5c-1c76c7bd6a65.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:49</td>
+																		<td class='step-name'>Step: Enter Postal code.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:49</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_49_83f2e54e-150b-4db3-ab56-90152c683f48.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_49_83f2e54e-150b-4db3-ab56-90152c683f48.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:49</td>
+																		<td class='step-name'>Step: CLick On years .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:50</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_50_716523e4-bec2-4d45-bf76-972cac766765.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_50_716523e4-bec2-4d45-bf76-972cac766765.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:50</td>
+																		<td class='step-name'>Step: Select Years .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:50</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_50_bb6866ac-4bfd-42c2-b259-2e8a6822ecb4.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_50_bb6866ac-4bfd-42c2-b259-2e8a6822ecb4.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:51</td>
+																		<td class='step-name'>Step: CLick ON months .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:51</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_51_ee6a0160-0b58-40b8-bb69-345cdb301219.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_51_ee6a0160-0b58-40b8-bb69-345cdb301219.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:51</td>
+																		<td class='step-name'>Step: Select Months .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:52</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_51_ec85ac06-a13e-44cc-b95c-a50864991cfa.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_51_ec85ac06-a13e-44cc-b95c-a50864991cfa.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:52</td>
+																		<td class='step-name'>Step: Click ON continue button on Address detils page .</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:52</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_52_4fd17ec8-609b-42ca-93eb-d610bf8480e3.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_52_4fd17ec8-609b-42ca-93eb-d610bf8480e3.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:53</td>
+																		<td class='step-name'>Step: CLick Source of income.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:54</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_54_67b10853-397e-49a4-a066-e84fc7b272e4.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_54_67b10853-397e-49a4-a066-e84fc7b272e4.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:54</td>
+																		<td class='step-name'>Step: Select Source of income Employed.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:54</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_54_5ec832ed-4804-4972-9310-c076d7458c29.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_54_5ec832ed-4804-4972-9310-c076d7458c29.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:54</td>
+																		<td class='step-name'>Step: Click Type of employment.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:55</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_55_eae7b5eb-727e-479e-88c3-58c5629a9354.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_55_eae7b5eb-727e-479e-88c3-58c5629a9354.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:55</td>
+																		<td class='step-name'>Step: Select Type of employment Full Time.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:55</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_55_223c0560-a031-4b44-b7b3-ead32ea75597.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_55_223c0560-a031-4b44-b7b3-ead32ea75597.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:56</td>
+																		<td class='step-name'>Step: Enter Employeer name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:56</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_56_c1853456-16f7-4d05-93b1-84da7c9abb7c.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_56_c1853456-16f7-4d05-93b1-84da7c9abb7c.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:56</td>
+																		<td class='step-name'>Step: Click Length of employment years.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:57</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_57_4471e714-5128-474e-ae71-bbd5f5875ed3.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_57_4471e714-5128-474e-ae71-bbd5f5875ed3.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:57</td>
+																		<td class='step-name'>Step: Select Length of employment years.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:57</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_57_40699b69-dcdf-41d1-93c8-9bf1b49022ff.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_57_40699b69-dcdf-41d1-93c8-9bf1b49022ff.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:57</td>
+																		<td class='step-name'>Step: Click Length of employment Months.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:58</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_58_cc55eea8-a66f-4652-affc-44bc21a2b66d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_58_cc55eea8-a66f-4652-affc-44bc21a2b66d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:58</td>
+																		<td class='step-name'>Step: Select Length of employment Months.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:58</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_58_ac8f681e-8109-499c-b1fa-8bf9485c1877.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_58_ac8f681e-8109-499c-b1fa-8bf9485c1877.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:58</td>
+																		<td class='step-name'>Step: CLick How is your salary paid?.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:59</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_59_aa6b91b3-6c98-4da4-ab32-bd455a51d241.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_59_aa6b91b3-6c98-4da4-ab32-bd455a51d241.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:29:59</td>
+																		<td class='step-name'>Step: Select How is your salary paid DirectDeposit.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:29:59</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_59_026437af-1156-449b-a079-07ae02cee0e3.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_29_59_026437af-1156-449b-a079-07ae02cee0e3.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:00</td>
+																		<td class='step-name'>Step: CLick How often do you get paid?.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:00</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_00_0ef2720a-3e44-417a-8e40-b4ad1f0be383.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_00_0ef2720a-3e44-417a-8e40-b4ad1f0be383.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:00</td>
+																		<td class='step-name'>Step: Select How often do you get paid? Monthly.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:01</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_01_13a71745-d0c0-4283-bcb1-e97b8ec76f3e.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_01_13a71745-d0c0-4283-bcb1-e97b8ec76f3e.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:01</td>
+																		<td class='step-name'>Step: Enter Next pay date.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:01</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_01_fe0f2e10-6853-46a4-bf1f-de9dd5d1ea5c.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_01_fe0f2e10-6853-46a4-bf1f-de9dd5d1ea5c.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:02</td>
+																		<td class='step-name'>Step: Enter Amount of last net pay(including tips if applicable)*.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:02</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_02_d37d51e4-9ee8-4126-9be9-3739dc9204ee.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_02_d37d51e4-9ee8-4126-9be9-3739dc9204ee.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:02</td>
+																		<td class='step-name'>Step: CLick Is a portion of your salary paid in cash (e.g. tips)?*.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:03</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_03_4dd8cb26-c9fd-415f-b0d0-dc37b5d95133.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_03_4dd8cb26-c9fd-415f-b0d0-dc37b5d95133.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:03</td>
+																		<td class='step-name'>Step: Select Yes.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:03</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_03_e6d2f1ea-76f3-4fa5-b4c8-657f3ab48c26.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_03_e6d2f1ea-76f3-4fa5-b4c8-657f3ab48c26.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:03</td>
+																		<td class='step-name'>Step: Enter How much of your net pay is paid in cash?*.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:04</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_04_875d56a4-acb3-4b31-b31d-4c38bf9be205.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_04_875d56a4-acb3-4b31-b31d-4c38bf9be205.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:04</td>
+																		<td class='step-name'>Step: Click on continue button on Employment Details page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:04</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_04_98e5e583-8963-48c6-a039-4bceb049918c.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_04_98e5e583-8963-48c6-a039-4bceb049918c.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:08</td>
+																		<td class='step-name'>Step: Click Bank Name.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:08</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_08_cef6fb54-5853-4bf7-8967-7023ca7433dd.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_08_cef6fb54-5853-4bf7-8967-7023ca7433dd.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:08</td>
+																		<td class='step-name'>Step: Select Banak Name Others.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:09</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_09_770d470c-2185-4746-9f5b-f77a8da83316.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_09_770d470c-2185-4746-9f5b-f77a8da83316.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:09</td>
+																		<td class='step-name'>Step: Enter Transit number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:09</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_09_23f479b2-a48c-458f-a3dc-0f35c900e952.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_09_23f479b2-a48c-458f-a3dc-0f35c900e952.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:09</td>
+																		<td class='step-name'>Step: Enter Account number.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:10</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_10_406d2263-b7da-4f45-9580-1b6be18f8759.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_10_406d2263-b7da-4f45-9580-1b6be18f8759.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:10</td>
+																		<td class='step-name'>Step: Click On continue Button on bank detail page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:10</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_10_565128a6-b7fa-4e43-906f-2c6a9935f173.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_10_565128a6-b7fa-4e43-906f-2c6a9935f173.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:14</td>
+																		<td class='step-name'>Step: Click on first check box.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:14</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_14_c257c681-8c16-45de-bd4e-b956ed6220fd.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_14_c257c681-8c16-45de-bd4e-b956ed6220fd.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:14</td>
+																		<td class='step-name'>Step: Click on second check box.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:15</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_15_80bfefc7-08a4-4e2e-9ca2-f0f72aff6f9c.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_15_80bfefc7-08a4-4e2e-9ca2-f0f72aff6f9c.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:15</td>
+																		<td class='step-name'>Step: Click on continue Button on review info page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:16</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_16_846744c7-b0e4-46c2-8994-5879d65582ce.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_16_846744c7-b0e4-46c2-8994-5879d65582ce.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:20</td>
+																		<td class='step-name'>Step: Enter on OTP.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:20</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_20_b1cc236c-1030-4f25-90d7-a8b5268f7273.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_20_b1cc236c-1030-4f25-90d7-a8b5268f7273.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:20</td>
+																		<td class='step-name'>Step: Enter Create password.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:21</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_21_97848c23-46e0-4097-ab51-78307ee80907.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_21_97848c23-46e0-4097-ab51-78307ee80907.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:21</td>
+																		<td class='step-name'>Step: Enter Reconfirm Password.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:21</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_21_e2aeb665-a96a-4cfc-9d8f-dca3a3f2ae19.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_21_e2aeb665-a96a-4cfc-9d8f-dca3a3f2ae19.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:22</td>
+																		<td class='step-name'>Step: Click on continue button on Active your Account Page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:22</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_22_5ffef3f9-c261-47e8-857a-d76884b42a21.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_22_5ffef3f9-c261-47e8-857a-d76884b42a21.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:38</td>
+																		<td class='step-name'>Step: Click on Bank Name Drop Down.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:38</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_38_907bac88-1a5a-476f-900b-4a98241e6995.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_38_907bac88-1a5a-476f-900b-4a98241e6995.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:38</td>
+																		<td class='step-name'>Step: Select Dummy standrad bank.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:39</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_39_d07ffab5-56e2-4a78-8174-acb15b9420b4.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_39_d07ffab5-56e2-4a78-8174-acb15b9420b4.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:42</td>
+																		<td class='step-name'>Step: Enter catalog value testf.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:43</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_42_c0f1c217-c31e-4dfd-9aac-ebc46fbbb206.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_42_c0f1c217-c31e-4dfd-9aac-ebc46fbbb206.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:43</td>
+																		<td class='step-name'>Step: Enter password testf.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:43</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_43_cce40762-31c4-4935-b4fc-a6da7320e9a7.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_43_cce40762-31c4-4935-b4fc-a6da7320e9a7.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:54</td>
+																		<td class='step-name'>Step: Enter password testf.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:54</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_54_f07a611a-2cbc-498a-8b90-e251b9caf07d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_54_f07a611a-2cbc-498a-8b90-e251b9caf07d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:54</td>
+																		<td class='step-name'>Step: click on submit button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:55</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_55_f34d3b30-9376-463b-a31f-ce8798c6c9b3.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_55_f34d3b30-9376-463b-a31f-ce8798c6c9b3.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:30:57</td>
+																		<td class='step-name'>Step: Click on I Agree Button and wait for 30 sec to fill answer :).</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:30:58</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_58_215e8ffb-05a4-419d-9df5-55f18745d335.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_30_58_215e8ffb-05a4-419d-9df5-55f18745d335.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:31:18</td>
+																		<td class='step-name'>Step: Click onCountinue Button on KYC page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:31:19</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_19_9c13e762-cc3b-4f18-9012-1ea134d4fff8.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_19_9c13e762-cc3b-4f18-9012-1ea134d4fff8.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:31:36</td>
+																		<td class='step-name'>Step: Click first Check Box Agreement.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:31:36</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_36_bf6706ff-cd71-4021-b5ce-9812b131a775.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_36_bf6706ff-cd71-4021-b5ce-9812b131a775.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:31:36</td>
+																		<td class='step-name'>Step: Click second Check Box Agreement.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:31:36</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_36_f2a601d9-6eab-42d2-8ffd-26daf0dda2a9.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_36_f2a601d9-6eab-42d2-8ffd-26daf0dda2a9.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:31:37</td>
+																		<td class='step-name'>Step: Click I Agree Button contract page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:31:37</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_37_5b268efd-5997-4a2d-afe4-d8ea86a06ae3.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_37_5b268efd-5997-4a2d-afe4-d8ea86a06ae3.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:31:40</td>
+																		<td class='step-name'>Step: Click on Cancel loan button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:31:41</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_41_b4489f4b-72ab-45eb-9841-fd2e1498d018.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_41_b4489f4b-72ab-45eb-9841-fd2e1498d018.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:31:51</td>
+																		<td class='step-name'>Step: Click on partial application link under previous loan.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:31:52</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_52_e568f8b6-7bb1-43c3-9117-4afb70d974da.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_52_e568f8b6-7bb1-43c3-9117-4afb70d974da.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:31:56</td>
+																		<td class='step-name'>Step: Click first Check Box Agreement.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:31:57</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_57_00b3e2c1-b04e-46dc-8e8e-29a6f31b0e51.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_57_00b3e2c1-b04e-46dc-8e8e-29a6f31b0e51.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:31:57</td>
+																		<td class='step-name'>Step: Click I Agree Button contract page.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:31:57</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_57_71d6ce2b-cc46-4844-b4a9-70fe09e987d8.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_31_57_71d6ce2b-cc46-4844-b4a9-70fe09e987d8.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:32:01</td>
+																		<td class='step-name'>Step: Click Accept And Continue Button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:32:01</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_32_01_e44dd51d-fcc4-44b6-b4da-b71cd6f88470.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_32_01_e44dd51d-fcc4-44b6-b4da-b71cd6f88470.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:32:06</td>
+																		<td class='step-name'>Step: Click Go to Dashboard Button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:32:06</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_32_06_a31d557e-083f-4d3f-baa5-fc2206cb1b5d.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_32_06_a31d557e-083f-4d3f-baa5-fc2206cb1b5d.png' /></a></td>
+																</tr>
+																<tr>
+																	<td class='status pass' title='pass' alt='pass'><i class='mdi-action-check-circle'></i></td>
+																	<td class='timestamp'>19:32:11</td>
+																		<td class='step-name'>Step: Ckecl SPL on Dashboard Button.</td>
+																	<td class='step-details'>Required Element found.</td>
+																</tr>
+																<tr>
+																	<td class='status info' title='info' alt='info'><i class='mdi-action-info-outline'></i></td>
+																	<td class='timestamp'>19:32:11</td>
+																	<td class='step-details'>Snapshot for Passed step is given below [Click it for full view]: <a href='E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_32_11_cbcbfbd1-7954-4c77-9707-ac724f4a1fb1.png' data-featherlight='image'><img class='report-img' src='file:///E:\Seleniumdata\Bankeroo\hmAutomation/extentreports/screenshots/CancelLoanTest_2017_08_21_19_32_11_cbcbfbd1-7954-4c77-9707-ac724f4a1fb1.png' /></a></td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='de97158a-4e47-4724-b03d-136cbd550f8a'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:11</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:11</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+1ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:11</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:11</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='975306a2-a9e5-418c-9b5d-63c5db38cd35'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:11</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:11</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:11</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='35c111d2-381a-41ec-89c4-9d6e48646844'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='6a3bd4c3-c73f-4574-9a56-b341a1972d79'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='1319dbe4-47f7-4b14-a39b-1c9d614cfbcf'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='7675d2fb-94e1-48ed-b138-ab9e79aaaa6a'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='a0320616-8b7c-4cf6-8c01-4546787d73e4'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:12</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:12</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='fec0e861-d656-4dcc-9153-f6c5c80f3288'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='117058f2-168e-4e4c-9b17-aead018f446a'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='cf6f2a1f-da94-483c-9365-16704e401688'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='493ec5fc-024e-40d4-badd-f6898c510543'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='49998dc6-5b50-4af4-9156-933ce2a364d8'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class='collection-item test displayed active skip ' extentid='b0c68ab6-78bb-44c0-8603-6c70fb21bb01'>
+											<div class='test-head'>
+												<span class='test-name'>Starting user registration </span>
+												<span class='test-status label right outline capitalize skip'>skip</span>
+												<span class='category-assigned hide '></span>
+											</div>
+											<div class='test-body'>
+												<div class='test-info'>
+													<span title='Test started time' alt='Test started time' class='test-started-time label green lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Test ended time' alt='Test ended time' class='test-ended-time label red lighten-1 text-white'>2017-08-21 19:32:13</span>
+													<span title='Time taken to finish' alt='Time taken to finish' class='test-time-taken label blue-grey lighten-3 text-white'>0h 0m 0s+0ms</span>
+												</div>
+												<div class='test-desc'></div>
+												<div class='test-attributes'>
+												</div>
+												<div class='test-steps'>
+													<table class='bordered table-results'>
+														<thead>
+															<tr>
+																<th>Status</th>
+																<th>Timestamp</th>
+																<th>Details</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:13</td>
+																	<td class='step-details'>This test case is skipped</td>
+																</tr>
+																<tr>
+																	<td class='status skip' title='skip' alt='skip'><i class='mdi-content-redo'></i></td>
+																	<td class='timestamp'>19:32:14</td>
+																	<td class='step-details'>Test Case Skipped is cancelLoan</td>
+																</tr>
+														</tbody>
+													</table>
+													<ul class='collapsible node-list' data-collapsible='accordion'>
+													</ul>
+												</div>
+											</div>
+										</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id='test-details-wrapper' class='col _addedCell2'>
+					<div class='contents'>
+						<div class='card-panel details-view'>
+							<h5 class='details-name'></h5>
+							<div class='step-filters right'>
+								<span class='btn-floating btn-small waves-effect waves-light blue' status='info' alt='info' title='info'><i class='mdi-action-info-outline'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light green' status='pass' alt='pass' title='pass'><i class='mdi-action-check-circle'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red' status='fail' alt='fail' title='fail'><i class='mdi-navigation-cancel'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red darken-4' status='fatal' alt='fatal' title='fatal'><i class='mdi-navigation-cancel'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light red lighten-2' status='error' alt='error' title='error'><i class='mdi-alert-error'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light orange' alt='warning' status='warning' title='warning'><i class='mdi-alert-warning'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light cyan' status='skip' alt='skip' title='skip'><i class='mdi-content-redo'></i></span>
+								<span class='btn-floating btn-small waves-effect waves-light grey darken-2' status='clear-step-filter' alt='Clear filters' title='Clear filters'><i class='mdi-content-clear'></i></span>
+							</div>
+							<div class='details-container'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /tests -->
+			
+			<!-- categories -->
+			<!-- /categories -->
+			
+			<!-- exceptions -->
+			<!-- /exceptions -->
+			
+			<!-- testrunner logs -->
+			<!-- /testrunner logs -->
+			
+		</div>
+		<!-- /container -->
+		
+		<!-- test dashboard counts setting -->
+		<div id='test-count-setting' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Configure Tests Count Setting</h5> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodes' class='with-gap'> 
+				<label for='parentWithoutNodes'>Parent Tests Only (Does not include child nodes in counts)</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='parentWithoutNodesAndNodes' class='with-gap'> 
+				<label for='parentWithoutNodesAndNodes'>Parent Tests Without Child Tests + Child Tests</label> 
+				<br> 
+				<input name='test-count-setting' type='radio' id='childNodes' class='with-gap'> 
+				<label for='childNodes'>Child Tests Only</label> 
+			</div> 
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /test dashboard counts setting -->
+		
+		<!-- filter for step status -->
+		<div id='step-status-filter' class='modal bottom-sheet'> 
+			<div class='modal-content'> 
+				<h5>Select status</h5> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-pass'> 
+				<label for='step-dashboard-filter-pass'>Pass</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fail'> 
+				<label for='step-dashboard-filter-fail'>Fail</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-fatal'> 
+				<label for='step-dashboard-filter-fatal'>Fatal</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-error'> 
+				<label for='step-dashboard-filter-error'>Error</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-warning'> 
+				<label for='step-dashboard-filter-warning'>Warning</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-skip'> 
+				<label for='step-dashboard-filter-skip'>Skipped</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-info'> 
+				<label for='step-dashboard-filter-info'>Info</label> 
+				<br> 
+				<input checked class='filled-in' type='checkbox' id='step-dashboard-filter-unknown'> 
+				<label for='step-dashboard-filter-unknown'>Unknown</label> 
+			</div>
+			<div class='modal-footer'> 
+				<a href='#!' class='modal-action modal-close waves-effect waves-green btn'>Save</a> 
+			</div> 
+		</div>
+		<!-- /filter for step status -->
+		
+		<script src='http://cdn.rawgit.com/anshooarora/extentreports/6032d73243ba4fe4fb8769eb9c315d4fdf16fe68/cdn/extent.js' type='text/javascript'></script>
+
+		<script>$(document).ready(function() { $('.logo span').html('ExtentReports'); });</script>
+		<script>
+				
+      
+        $(document).ready(function() {
+          
+        });
+      
+    
+		</script>
+	</body>
+</html>
